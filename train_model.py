@@ -8,8 +8,6 @@ from sklearn.pipeline import Pipeline
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
 
-# 1. Load Data
-# IMPORTANT: Ensure 'House_Rent_Dataset.csv' is inside a folder named 'dataset'
 try:
     df = pd.read_csv('dataset/House_Rent_Dataset.csv')
     print("✅ Data Loaded Successfully!")
@@ -18,7 +16,6 @@ except FileNotFoundError:
     print("Please create a 'dataset' folder and put the Kaggle CSV inside it.")
     exit()
 
-# 2. Preprocessing
 def clean_floor(x):
     try:
         if 'Ground' in x: return 0
@@ -33,7 +30,6 @@ target = 'Rent'
 X = df[features]
 y = df[target]
 
-# 3. Pipeline Setup
 numeric_features = ['BHK', 'Size', 'Floor_Level', 'Bathroom']
 categorical_features = ['City', 'Furnishing Status']
 
@@ -48,20 +44,17 @@ model_pipeline = Pipeline(steps=[
     ('regressor', XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=-1))
 ])
 
-# 4. Train
-print("⏳ Training Model... Please wait.")
+print("Training Model... Please wait.")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model_pipeline.fit(X_train, y_train)
 
-# 5. Evaluate
 score = r2_score(y_test, model_pipeline.predict(X_test))
-print(f"🎉 Model Trained! Accuracy Score: {score:.4f}")
+print(f"Model Trained! Accuracy Score: {score:.4f}")
 
-# 6. Save
 import os
 if not os.path.exists('models'):
     os.makedirs('models')
     
 with open('models/rent_model.pkl', 'wb') as f:
     pickle.dump(model_pipeline, f)
-print("💾 Model saved to 'models/rent_model.pkl'")
+print("Model saved to 'models/rent_model.pkl'")
