@@ -34,26 +34,22 @@ Beyond simple prediction, the system acts as an intelligent advisor—analyzing 
 | **Data Source** | Kaggle | House Rent Prediction Dataset (4,700+ rows). |
 
 ---
-## Project Structure
-'''
+## 📸 Project Structure
+
+```text
 PropAI-Estate-Estimator/
 ├── dataset/
 │   └── House_Rent_Dataset.csv   # Raw Data
 ├── models/
 │   └── rent_model.pkl           # Trained Model File
-├── static/                      # CSS/Images (Optional)
 ├── templates/
 │   └── index.html               # Main Web Interface
 ├── app.py                       # Flask Server & Logic
 ├── train_model.py               # Model Training Script
 ├── requirements.txt             # Dependencies
 └── README.md                    # Documentation
-'''
-## ⚙️ Installation & Run Guide
-
-Follow these steps to run the project locally on your machine.
-
-### 1. Clone the Repository
+```
+### Clone the Repository
 ```bash
 git clone (https://github.com/Akanksha2028/PropAI-Estate-Estimator.git)
 cd PropAI-Estate-Estimator
