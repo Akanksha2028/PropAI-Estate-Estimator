@@ -55,3 +55,8 @@ To download the code, run this command:
 ```bash
 git clone [https://github.com/Akanksha2028/PropAI-Estate-Estimator.git](https://github.com/Akanksha2028/PropAI-Estate-Estimator.git)
 cd PropAI-Estate-Estimator
+Click **Commit changes**.
+
+**Result:**
+* The **Grey Box** will have a clean, working command for the terminal.
+* The **Blue Link** will appear *below* the box for people to click.
