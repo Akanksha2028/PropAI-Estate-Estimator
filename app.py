@@ -15,15 +15,14 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # 1. Get User Input
+        
         city = request.form['city']
         furnishing = request.form['furnishing']
-        bhk = float(request.form['bhk'])           # User Requested
-        bathroom = float(request.form['bathroom']) # User Requested
-        floor_input = request.form['floor']        # User Requested
-        size = float(request.form['size'])         # User Requested
+        bhk = float(request.form['bhk'])           
+        bathroom = float(request.form['bathroom']) 
+        floor_input = request.form['floor']        
+        size = float(request.form['size'])        
 
-        # 2. Process Floor
         floor_level = 0
         if 'Ground' in floor_input:
             floor_level = 0
@@ -31,15 +30,13 @@ def predict():
             try: floor_level = int(floor_input)
             except: floor_level = 0
 
-        # 3. Prepare Data for Model
+        
         input_data = pd.DataFrame([[bhk, size, floor_level, city, furnishing, bathroom]],
                                   columns=['BHK', 'Size', 'Floor_Level', 'City', 'Furnishing Status', 'Bathroom'])
 
-        # 4. Predict
         prediction = model.predict(input_data)[0]
         final_price = round(prediction, 2)
 
-        # 5. The "Unique" Logic (Verdict)
         price_per_sqft = final_price / size
         
         if price_per_sqft < 15:
