@@ -49,7 +49,9 @@ PropAI-Estate-Estimator/
 ├── requirements.txt             # Dependencies
 └── README.md                    # Documentation
 ```
-### Clone the Repository
+### 1. Clone the Repository
+
+To download the code, run this command:
 ```bash
-git clone https://github.com/Akanksha2028/PropAI-Estate-Estimator.git
+git clone [https://github.com/Akanksha2028/PropAI-Estate-Estimator.git](https://github.com/Akanksha2028/PropAI-Estate-Estimator.git)
 cd PropAI-Estate-Estimator
