@@ -51,5 +51,5 @@ PropAI-Estate-Estimator/
 ```
 ### Clone the Repository
 ```bash
-git clone (https://github.com/Akanksha2028/PropAI-Estate-Estimator.git)
+git clone https://github.com/Akanksha2028/PropAI-Estate-Estimator.git
 cd PropAI-Estate-Estimator
