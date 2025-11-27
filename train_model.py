@@ -10,9 +10,9 @@ from sklearn.metrics import r2_score
 
 try:
     df = pd.read_csv('dataset/House_Rent_Dataset.csv')
-    print("✅ Data Loaded Successfully!")
+    print("Data Loaded Successfully!")
 except FileNotFoundError:
-    print("❌ Error: Could not find 'dataset/House_Rent_Dataset.csv'")
+    print("Error: Could not find 'dataset/House_Rent_Dataset.csv'")
     print("Please create a 'dataset' folder and put the Kaggle CSV inside it.")
     exit()
 
